@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body{background: blue;margin:0}
+        #fish{width:100px;position: absolute;}
+    </style>
+</head>
+<body>
+            <audio src="bubble.mp3.WAV" id="bubble"></audio>
+
+        <button id="st">start</button>
+<script type="text/javascript">
+        window.onkeydown = function(e){
+                console.log(e.keyCode);
+                
+                if(e.keyCode == 37){
+                        bubble.load();bubble.play();
+                };
+
+        }
+        st.onclick = function(){
+                setInterval(hi, 400);        
+        }
+
+        function hi(){
+                bubble.load();bubble.play();
+        }
+    </script>
+</body>
+</html>
+    <img src="fish.png" id="fish">
+    <script type="text/javascript">
+    var t = setInterval(makefish,1000);
+
+function makefish(){
+    let x = Math.random()*(window.innerWidth - 100);
+    let y = Math.random()*(window.innerHeight - 106);
+    let d = document.getElementById("fish");
+    let a = d.cloneNode(true);
+    a.onclick = function(){ this.remove();}
+    a.style.left = x + "px";
+    a.style.top = y + "px";
+    document.body.appendChild(a);
+    console.log(x,y);
+}  
+        
+    </script>
+</body>
+</html>
